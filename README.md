@@ -15,14 +15,13 @@ There are 10 stages in this project:
 9. Deployment.
 10. Documentation.
 
-├── data/                         # Raw and Cleaned datasets (Git-ignored)
+##  Project Structure
 
+```text
+.
+├── data/                  # Raw and Cleaned datasets (Git-ignored)
 ├── notebooks/
-
-│   └── main_code.ipynb           # Main implementation file
-
-├── results/                      # Saved EDA plots and Model metrics
-
-├── .gitignore                    # Prevents clutter (venv, csv, etc.)
-
-└── README.md                     # Project documentation
+│   └── main_code.ipynb    # Main implementation file
+├── results/               # Saved EDA plots and Model metrics
+├── .gitignore             # Prevents clutter (venv, csv, etc.)
+└── README.md              # Project documentation
