@@ -25,3 +25,7 @@ There are 10 stages in this project:
 ├── results/               # Saved EDA plots and Model metrics
 ├── .gitignore             # Prevents clutter (venv, csv, etc.)
 └── README.md              # Project documentation
+
+## Data Preprocessing
+
+Data Preprocessing is the process of transforming raw, "messy" data into a clean format that a machine learning model can understand. In your project, this involved converting the TotalCharges column to a numeric format and filling missing values for new customers with 0.0. It also included Feature Engineering, where you created new variables like ServiceCount and ContractRisk to give the model better predictive power
