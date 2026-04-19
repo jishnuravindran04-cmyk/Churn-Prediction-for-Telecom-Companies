@@ -26,13 +26,13 @@ There are 10 stages in this project:
 ├── .gitignore             # Prevents clutter (venv, csv, etc.)
 └── README.md              # Project documentation
 ```
-### 🛠️ Data Preprocessing (Stage 3)
+### Data Preprocessing
 Data Preprocessing is the essential cleaning and refinement phase of the project. During this stage, I transformed raw, inconsistent data into a machine-learning-ready format by converting `TotalCharges` into a numeric type and handling missing values for new customers. Additionally, I performed feature engineering by creating new metrics like `ServiceCount` and `ContractRisk`, which allowed the model to capture deeper business insights that weren't present in the initial dataset.
 
-### 📈 Exploratory Data Analysis - EDA (Stage 4)
+### Exploratory Data Analysis - EDA
 EDA functioned as the investigative heart of the project, where I used visual storytelling to uncover the "why" behind customer behavior. By plotting churn rates against various categories, I identified that customers on month-to-month contracts and those with high monthly charges are at the highest risk of leaving. This phase was crucial for validating our features and ensuring that the patterns discovered visually aligned with the logical expectations of the telecom industry.
 
 
 
-### ⚖️ SMOTE (Stage 5)
+### SMOTE 
 SMOTE (Synthetic Minority Over-sampling Technique) was implemented to solve the critical problem of class imbalance, where "staying" customers significantly outnumbered "churning" customers. Without this, the model would likely ignore churners entirely to maintain a high (but misleading) accuracy score. By generating synthetic data points for the minority churn class, I balanced the training set to a 50/50 split, forcing the model to become more sensitive and accurate in predicting when a customer is actually about to leave.
