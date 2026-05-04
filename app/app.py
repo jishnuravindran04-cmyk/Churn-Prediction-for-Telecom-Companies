@@ -183,7 +183,8 @@ if st.sidebar.button("🔍 Predict Churn", use_container_width=True):
     st.caption(
         "SHAP values show which features pushed the prediction toward churn (red) or away from churn (blue).")
 
-    explainer = shap.TreeExplainer(model)
+    with st.spinner("Calculating SHAP explanation... please wait"):
+        explainer = shap.TreeExplainer(model)
     shap_values = explainer.shap_values(input_df)
 
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -235,3 +236,59 @@ if st.sidebar.button("🔍 Predict Churn", use_container_width=True):
 
 else:
     st.info("👈 Fill in customer details in the sidebar and click **Predict Churn** to get started.")
+
+# =============================================================================
+# GLOBAL FEATURE IMPORTANCE — shown always on the page
+# =============================================================================
+st.divider()
+st.subheader("📊 Overall Feature Importance")
+st.caption(
+    "These are the top factors that drive churn across ALL customers — not just one.")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("**Random Forest — Top 10 Features**")
+    rf_importance = pd.Series(
+        rf_model.feature_importances_,
+        index=feature_columns
+    ).sort_values(ascending=False).head(10)
+
+    fig_rf, ax_rf = plt.subplots(figsize=(6, 4))
+    colors_rf = ['#E05C5C' if i == 0 else '#4A90D9'
+                 for i in range(len(rf_importance))]
+    ax_rf.barh(
+        rf_importance.index[::-1],
+        rf_importance.values[::-1],
+        color=colors_rf[::-1]
+    )
+    ax_rf.set_xlabel("Importance Score")
+    ax_rf.spines['top'].set_visible(False)
+    ax_rf.spines['right'].set_visible(False)
+    plt.tight_layout()
+    st.pyplot(fig_rf)
+    plt.close()
+
+with col2:
+    st.markdown("**XGBoost — Top 10 Features**")
+    xgb_importance = pd.Series(
+        xgb_model.feature_importances_,
+        index=feature_columns
+    ).sort_values(ascending=False).head(10)
+
+    fig_xgb, ax_xgb = plt.subplots(figsize=(6, 4))
+    colors_xgb = ['#E05C5C' if i == 0 else '#4A90D9'
+                  for i in range(len(xgb_importance))]
+    ax_xgb.barh(
+        xgb_importance.index[::-1],
+        xgb_importance.values[::-1],
+        color=colors_xgb[::-1]
+    )
+    ax_xgb.set_xlabel("Importance Score")
+    ax_xgb.spines['top'].set_visible(False)
+    ax_xgb.spines['right'].set_visible(False)
+    plt.tight_layout()
+    st.pyplot(fig_xgb)
+    plt.close()
+
+st.caption("🔴 Red = most important feature  |  🔵 Blue = other important features")
