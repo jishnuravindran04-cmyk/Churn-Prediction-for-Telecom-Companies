@@ -14,7 +14,7 @@ There are 10 stages in this project:
 8. Interpretability.
 9. Deployment.
 10. Documentation.
-```
+```text
 | Property               | Value                                                                                                                            |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **Dataset Name**       | IBM Watson Telco Churn                                                                                                           |
