@@ -14,7 +14,7 @@ There are 10 stages in this project:
 8. Interpretability.
 9. Deployment.
 10. Documentation.
-```text
+
 | Property               | Value                                                                                                                            |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **Dataset Name**       | IBM Watson Telco Churn                                                                                                           |
@@ -24,7 +24,6 @@ There are 10 stages in this project:
 | **Target Variable**    | **Churn** — Yes (1) / No (0)                                                                                                     |
 | **Class Distribution** | 73.5% No Churn · 26.5% Churned                                                                                                   |
 
-```
 ##  Project Structure
 
 ```text
@@ -36,7 +35,6 @@ There are 10 stages in this project:
 ├── .gitignore             # Prevents clutter (venv, csv, etc.)
 └── README.md              # Project documentation
 ```
-                                                                                                   |
 ### Data Preprocessing
 Data Preprocessing is the essential cleaning and refinement phase of the project. During this stage, I transformed raw, inconsistent data into a machine-learning-ready format by converting `TotalCharges` into a numeric type and handling missing values for new customers. Additionally, I performed feature engineering by creating new metrics like `ServiceCount` and `ContractRisk`, which allowed the model to capture deeper business insights that weren't present in the initial dataset.
 
