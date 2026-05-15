@@ -80,6 +80,7 @@ X_train_res, y_train_res = sm.fit_resample(
     X_train,
     y_train
 )
+```text
 | Model | Purpose |
 |---|---|
 | Logistic Regression | Interpretable baseline |
