@@ -60,7 +60,7 @@ SMOTE (Synthetic Minority Over-sampling Technique) was implemented to solve the 
 
 Feature selection was performed using **SHAP feature importance** from a preliminary **XGBoost** model.
 
-## Stage 6 · Model Building & Training
+## Model Building & Training
 
 ### Train-Test Split & SMOTE
 
@@ -93,7 +93,7 @@ X_train_res, y_train_res = sm.fit_resample(
 
 ---
 
-## Stage 7 · Model Evaluation & Comparison
+## Model Evaluation & Comparison
 
 | Model | Accuracy | Precision | Recall (Churn) | F1 Score (Churn) | ROC-AUC |
 |---|---|---|---|---|---|
@@ -132,7 +132,7 @@ This is a valid business trade-off when:
 
 ---
 
-## Stage 8 · Model Interpretation & Explainability (SHAP)
+## Model Interpretation & Explainability (SHAP)
 
 ### SHAP Explainability Applied
 
@@ -167,7 +167,7 @@ SHAP (**SHapley Additive exPlanations**) was used to interpret predictions from 
 
 ---
 
-## Stage 9 · Deployment (Streamlit)
+## Deployment (Streamlit)
 
 ### Deployment Platform
 
