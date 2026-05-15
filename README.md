@@ -60,7 +60,7 @@ SMOTE (Synthetic Minority Over-sampling Technique) was implemented to solve the 
 
 Feature selection was performed using **SHAP feature importance** from a preliminary **XGBoost** model.
 
-# Stage 6 · Model Building & Training
+## Stage 6 · Model Building & Training
 
 ### Train-Test Split & SMOTE
 
@@ -68,7 +68,8 @@ SMOTE was applied **only on the training set** to prevent data leakage.
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y,
+    X,
+    y,
     test_size=0.2,
     stratify=y,
     random_state=42
@@ -80,14 +81,19 @@ X_train_res, y_train_res = sm.fit_resample(
     X_train,
     y_train
 )
-```text
+```
+
+### Models Trained & Tuned
+
 | Model | Purpose |
 |---|---|
 | Logistic Regression | Interpretable baseline |
 | Random Forest | Ensemble model with `class_weight='balanced'` |
 | XGBoost | Primary optimized model with tuned `scale_pos_weight`, `max_depth`, and `learning_rate` |
 
-## Model Evaluation & Comparison
+---
+
+## Stage 7 · Model Evaluation & Comparison
 
 | Model | Accuracy | Precision | Recall (Churn) | F1 Score (Churn) | ROC-AUC |
 |---|---|---|---|---|---|
@@ -109,8 +115,59 @@ The decision threshold was reduced from:
 
 ```python
 0.50 → 0.35
+```
 
-# Deployment (Streamlit)
+This improved churn recall to approximately:
+
+```python
+~72%
+```
+
+at the cost of some precision.
+
+This is a valid business trade-off when:
+
+- Retention campaign costs are low
+- Missing a churn customer is more expensive than contacting a non-churn customer
+
+---
+
+## Stage 8 · Model Interpretation & Explainability (SHAP)
+
+### SHAP Explainability Applied
+
+SHAP (**SHapley Additive exPlanations**) was used to interpret predictions from the XGBoost model.
+
+### SHAP Visualizations Generated
+
+| Visualization | Purpose |
+|---|---|
+| Global Summary Plot | Shows the most important churn-driving features across all customers |
+| Waterfall Plot | Explains why a specific customer was predicted to churn |
+| Dependence Plot | Shows how features interact and influence churn probability |
+
+### Top SHAP Features (Global Importance)
+
+| Rank | Feature | Effect on Churn |
+|---|---|---|
+| 1 | Contract_Month-to-month | ↑ Increases churn |
+| 2 | tenure | ↓ Longer tenure reduces churn |
+| 3 | MonthlyCharges | ↑ Higher charges increase churn |
+| 4 | InternetService_Fiber optic | ↑ Higher churn tendency |
+| 5 | OnlineSecurity | ↓ Having it reduces churn |
+
+### Business Retention Strategies from SHAP Insights
+
+| Insight | Recommended Business Action |
+|---|---|
+| Month-to-month customers show highest churn | Offer discounted 1-year contract upgrades after month 3 |
+| Fiber optic customers with high charges are high-risk | Provide loyalty discounts or pricing reviews |
+| Customers without OnlineSecurity churn more | Bundle OnlineSecurity + TechSupport during onboarding |
+| Electronic check payers show higher churn | Encourage auto-payment incentives and cashback offers |
+
+---
+
+## Stage 9 · Deployment (Streamlit)
 
 ### Deployment Platform
 
@@ -118,6 +175,7 @@ The trained XGBoost model was deployed on:
 
 ```python
 Streamlit Community Cloud
+```
 
 ### App Features
 
@@ -136,3 +194,5 @@ Streamlit Community Cloud
   - Global SHAP summary plot
   - Feature importance chart
   - EDA visualizations
+
+
