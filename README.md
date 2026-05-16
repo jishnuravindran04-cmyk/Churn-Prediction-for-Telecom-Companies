@@ -29,6 +29,10 @@ There are 10 stages in this project:
 | **Target Variable**    | **Churn** — Yes (1) / No (0)                                                                                                     |
 | **Class Distribution** | 73.5% No Churn · 26.5% Churned                                                                                                   |
 
+## Live Demo
+
+🔗 [Open the Streamlit App](https://churn-prediction-for-telecom-companies-dru6pllndqlaccnp3nwmj9.streamlit.app/)
+
 ##  Project Structure
 
 ```text
@@ -199,9 +203,5 @@ Streamlit Community Cloud
   - Global SHAP summary plot
   - Feature importance chart
   - EDA visualizations
-
-## Streamlit App
-
-[Open the App](https://churn-prediction-for-telecom-companies-dru6pllndqlaccnp3nwmj9.streamlit.app/)
 
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/611f44e6-8010-4b0e-b467-458c2f9b396f" />
