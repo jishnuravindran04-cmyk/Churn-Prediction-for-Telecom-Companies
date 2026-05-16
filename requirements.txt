@@ -8,3 +8,11 @@ streamlit
 joblib
 shap
 plotly
+streamlit
+pandas
+numpy
+joblib
+shap
+matplotlib
+scikit-learn
+xgboost

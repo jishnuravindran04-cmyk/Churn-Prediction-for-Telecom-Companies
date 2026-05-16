@@ -188,6 +188,12 @@ SHAP (**SHapley Additive exPlanations**) was used to interpret predictions from 
 
 ### Deployment Platform
 
+### Live Application
+
+The deployed Streamlit application can be accessed here:
+
+🔗 [Churn Prediction App](https://churn-prediction-for-telecom-companies-dru6pllndqlaccnp3nwmj9.streamlit.app/)
+
 The trained XGBoost model was deployed on:
 
 ```python

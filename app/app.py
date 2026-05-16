@@ -11,6 +11,8 @@ import json
 import shap
 import matplotlib.pyplot as plt
 import warnings
+from pathlib import Path
+
 warnings.filterwarnings('ignore')
 
 # =============================================================================
@@ -29,9 +31,12 @@ st.set_page_config(
 
 @st.cache_resource
 def load_models():
-    rf = joblib.load('../models/random_forest_model.pkl')
-    xgb = joblib.load('../models/xgboost_model.pkl')
-    with open('../models/feature_columns.json') as f:
+    base_dir = Path(__file__).resolve().parent.parent
+    model_dir = base_dir / 'models'
+
+    rf = joblib.load(model_dir / 'random_forest_model.pkl')
+    xgb = joblib.load(model_dir / 'xgboost_model.pkl')
+    with open(model_dir / 'feature_columns.json') as f:
         cols = json.load(f)
     return rf, xgb, cols
 
