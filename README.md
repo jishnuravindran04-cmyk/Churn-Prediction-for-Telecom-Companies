@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![XGBoost](https://img.shields.io/badge/XGBoost-ML-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # Churn-Prediction-for-Telecom-Companies
 Predictive Analytics Project - Telecom Churn Prediction using XGBoost, Random Forest, and SHAP
 
@@ -23,6 +28,10 @@ There are 10 stages in this project:
 | **Columns**            | 21 raw features → 32 features after encoding                                                                                     |
 | **Target Variable**    | **Churn** — Yes (1) / No (0)                                                                                                     |
 | **Class Distribution** | 73.5% No Churn · 26.5% Churned                                                                                                   |
+
+## Live Demo
+
+🔗 [Open the Streamlit App](https://churn-prediction-for-telecom-companies-dru6pllndqlaccnp3nwmj9.streamlit.app/)
 
 ##  Project Structure
 
@@ -100,6 +109,14 @@ X_train_res, y_train_res = sm.fit_resample(
 | Logistic Regression | 80.2% | 65.1% | 55.3% | 59.8% | 0.843 |
 | Random Forest | 79.8% | 63.4% | 57.6% | 60.4% | 0.836 |
 | XGBoost | **81.5%** | **67.3%** | **62.1%** | **64.6%** | **0.861** |
+
+## Key Results
+
+- Achieved **81.5% accuracy** using XGBoost
+- Improved churn recall to **~72%** after threshold optimization
+- Identified month-to-month contracts as the strongest churn driver
+- Built an interactive Streamlit deployment for real-time predictions
+- Used SHAP explainability for transparent ML interpretation
 
 ### Best Model Selection
 
@@ -200,3 +217,6 @@ Streamlit Community Cloud
   - Global SHAP summary plot
   - Feature importance chart
   - EDA visualizations
+## Application Preview
+
+![App Screenshot](https://github.com/user-attachments/assets/611f44e6-8010-4b0e-b467-458c2f9b396f)
