@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![XGBoost](https://img.shields.io/badge/XGBoost-ML-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # Churn-Prediction-for-Telecom-Companies
 Predictive Analytics Project - Telecom Churn Prediction using XGBoost, Random Forest, and SHAP
 
