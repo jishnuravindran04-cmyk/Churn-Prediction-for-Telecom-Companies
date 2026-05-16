@@ -203,5 +203,9 @@ Streamlit Community Cloud
   - Global SHAP summary plot
   - Feature importance chart
   - EDA visualizations
+## Application Preview
+
+![App Screenshot](https://github.com/user-attachments/assets/611f44e6-8010-4b0e-b467-458c2f9b396f)
+
 
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/611f44e6-8010-4b0e-b467-458c2f9b396f" />
