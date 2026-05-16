@@ -195,6 +195,8 @@ Streamlit Community Cloud
   - Feature importance chart
   - EDA visualizations
 
-  Streamlit app URL=https://churn-prediction-for-telecom-companies-dru6pllndqlaccnp3nwmj9.streamlit.app/
+## Streamlit App
 
-  <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/611f44e6-8010-4b0e-b467-458c2f9b396f" />
+[Open the App](https://churn-prediction-for-telecom-companies-dru6pllndqlaccnp3nwmj9.streamlit.app/)
+
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/611f44e6-8010-4b0e-b467-458c2f9b396f" />
