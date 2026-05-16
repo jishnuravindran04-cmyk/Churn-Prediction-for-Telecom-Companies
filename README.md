@@ -110,6 +110,14 @@ X_train_res, y_train_res = sm.fit_resample(
 | Random Forest | 79.8% | 63.4% | 57.6% | 60.4% | 0.836 |
 | XGBoost | **81.5%** | **67.3%** | **62.1%** | **64.6%** | **0.861** |
 
+## Key Results
+
+- Achieved **81.5% accuracy** using XGBoost
+- Improved churn recall to **~72%** after threshold optimization
+- Identified month-to-month contracts as the strongest churn driver
+- Built an interactive Streamlit deployment for real-time predictions
+- Used SHAP explainability for transparent ML interpretation
+
 ### Best Model Selection
 
 XGBoost achieved the best overall performance, especially in:
